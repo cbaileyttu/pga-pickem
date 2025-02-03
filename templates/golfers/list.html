@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Golfer List</title>
+</head>
+<body>
+    <h1>Golfer List</h1>
+    <ul>
+        {% for golfer in golfers %}
+            <li>{{ golfer.name }}</li>
+        {% endfor %}
+    </ul>
+     <a href="/golfers/add">Add Golfer</a>
+</body>
+</html>

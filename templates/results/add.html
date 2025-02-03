@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Result</title>
+</head>
+<body>
+    <h1>Add Result</h1>
+    <form method="POST">
+        <label for="tournament_id">Tournament:</label>
+        <select name="tournament_id" required>
+            {% for tournament in tournaments %}
+               <option value="{{tournament.id}}">{{tournament.name}}</option>
+            {% endfor %}
+        </select><br><br>
+         <label for="golfer_id">Golfer:</label>
+         <select name="golfer_id" required>
+            {% for golfer in golfers %}
+               <option value="{{golfer.id}}">{{golfer.name}}</option>
+            {% endfor %}
+        </select><br><br>
+         <label for="purse_money">Purse Money:</label>
+        <input type="number" step="0.01" name="purse_money" required><br><br>
+        <input type="submit" value="Add Result">
+    </form>
+     <a href="/results">Back to Result List</a>
+</body>
+</html>

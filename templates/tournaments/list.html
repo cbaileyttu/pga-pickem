@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tournament List</title>
+    </head>
+    <body>
+        <h1>Tournament List</h1>
+        <ul>
+            {% for tournament in tournaments %}
+                <li>{{ tournament.name }} - {{ tournament.type }} (picks: {{ tournament.picks_allowed }})</li>
+            {% endfor %}
+        </ul>
+         <a href="/tournaments/add">Add Tournament</a>
+    </body>
+    </html>

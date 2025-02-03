@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Winnings List</title>
+    </head>
+    <body>
+        <h1>Winnings List</h1>
+        <ul>
+          {% for winning in formatted_winnings %}
+                <li>
+                    Tournament: {{ winning.tournament_name }}<br>
+                    Winner: {{ winning.user_name }}<br>
+                    Golfer: {{ winning.golfer_name }} <br>
+                    Winnings: ${{ "%.2f"|format(winning.weekly_winnings) }}<br>
+                    Additional Fee: ${{ "%.2f"|format(winning.additional_pick_fee) }}
+                </li>
+            {% endfor %}
+        </ul>
+         <a href="/winnings/add">Add Winnings</a>
+    </body>
+    </html>

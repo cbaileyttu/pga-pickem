@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Result List</title>
+    </head>
+    <body>
+        <h1>Result List</h1>
+        <ul>
+            {% for result in results %}
+                <li>Tournament: {{result.tournament_name}} - Golfer: {{result.golfer_name}} - Purse Money: {{result.purse_money}}</li>
+            {% endfor %}
+        </ul>
+        <a href="/results/add">Add Result</a>
+    </body>
+    </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Add Pick</title>
+    </head>
+    <body>
+        <h1>Add Pick</h1>
+        <form method="POST">
+            <label for="user_id">User:</label>
+            <select name="user_id" required>
+                {% for user in users %}
+                    <option value="{{user.id}}">{{user.username}}</option>
+                {% endfor %}
+            </select><br><br>
+             <label for="tournament_id">Tournament:</label>
+             <select name="tournament_id" required>
+                 {% for tournament in tournaments %}
+                    <option value="{{tournament.id}}">{{tournament.name}}</option>
+                 {% endfor %}
+             </select> <br><br>
+            <label for="golfer_id">Golfer:</label>
+            <select name="golfer_id" required>
+                {% for golfer in golfers %}
+                   <option value="{{golfer.id}}">{{golfer.name}}</option>
+                {% endfor %}
+            </select> <br><br>
+            <label for="is_additional_pick">Additional Pick:</label>
+            <input type="checkbox" name="is_additional_pick"><br><br>
+            <input type="submit" value="Add Pick">
+        </form>
+        <a href="/picks">Back to Pick List</a>
+    </body>
+    </html>

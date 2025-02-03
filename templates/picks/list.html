@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pick List</title>
+</head>
+<body>
+    <h1>Pick List</h1>
+    {% for user in users %}
+        <h2>{{user.username}} Picks</h2>
+         {% for tournament in tournaments %}
+            <h3>{{tournament.name}}</h3>
+             <ul>
+                {% for pick in formatted_picks %}
+                    {% if pick.user_id == user.id and pick.tournament_id == tournament.id %}
+                          <li>
+                                Golfer: {{pick.golfer_name}} - Additional:
+                                {% if pick.is_additional_pick %}
+                                 Yes
+                                {% else %}
+                                  No
+                                {% endif %}
+                             </li>
+                        {% endif %}
+                {% endfor %}
+              </ul>
+        {% endfor %}
+     {% endfor %}
+    <a href="/picks/add">Add Pick</a>
+</body>
+</html>

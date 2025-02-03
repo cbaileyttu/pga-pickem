@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Tournament</title>
+</head>
+<body>
+    <h1>Add Tournament</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br><br>
+        <label for="type">Type:</label>
+        <select name="type" required>
+            <option value="regular">Regular</option>
+            <option value="signature">Signature</option>
+             <option value="major">Major</option>
+        </select><br><br>
+         <label for="picks_allowed">Picks Allowed:</label>
+         <select name="picks_allowed" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <br><br>
+        <label for="date">Date (Optional):</label>
+        <input type="date" name="date"><br><br>
+        <input type="submit" value="Add Tournament">
+    </form>
+    <a href="/tournaments">Back to Tournament List</a>
+</body>
+</html>
